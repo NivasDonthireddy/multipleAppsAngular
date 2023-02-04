@@ -1,0 +1,24 @@
+<div class="page-container">
+    <div class="custom-card">
+        <h4 class="text-center">Login</h4>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="text" id="email" placeholder="Your email address"
+            class="form-control"
+            [(ngModel)]="email"
+            >
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="name" placeholder="Your Password"
+            class="form-control"
+            [(ngModel)]="password"
+            >
+        </div>
+        <p class="text-danger">{{errorMessage}}</p>
+        <button class="btn btn-primary btn-block" (click)="loginHandler()" [disabled]="!checkFormValidity()">Login</button>
+    
+        <p class="text-center my-3">Don't have an account?</p>
+        <button class="btn btn-success btn-block" [routerLink]="'/register'">Register</button>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="page-container">
+    <div class="custom-card">
+        <h4 class="text-center">Register</h4>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your full name"
+            [(ngModel)]="name"
+            class="form-control"
+            >
+        </div>
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select name="" id="role" class="form-control" [(ngModel)]="role">
+                <option value="">Select role</option>
+                <option *ngFor="let role of roleList" [value]="role">{{role}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="text" id="email" placeholder="Your email address"
+            class="form-control" 
+            [(ngModel)]="email"
+            >
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Your Password"
+            class="form-control"
+            [(ngModel)]="password"
+            >
+        </div>
+
+        <p class="text-danger">{{errorMessage}}</p>
+
+        <button class="btn btn-primary btn-block" 
+            [disabled]="!checkFormValidity()"
+            (click)="registerHandler()"
+        >Register</button>
+
+        <p class="text-center my-3">Already have an account?</p>
+        <button class="btn btn-primary btn-block" [routerLink]="'/login'">Login</button>
+    </div>
+</div>
